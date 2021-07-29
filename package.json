@@ -3,9 +3,9 @@
   "description": "A fhir client made with Svelte",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public -s",
+    "build": "rollup -c .config/rollup.config.js",
+    "dev": "rollup -c .config/rollup.config.js -w",
+    "start": "sirv public -s --port 3000",
     "validate": "svelte-check",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -15,6 +15,7 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-replace": "^3.0.0",
     "@rollup/plugin-typescript": "^8.0.0",
     "@storybook/addon-actions": "^6.3.6",
     "@storybook/addon-essentials": "^6.3.6",
