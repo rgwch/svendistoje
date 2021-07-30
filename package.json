@@ -1,6 +1,6 @@
 {
-  "name": "svelfhir",
-  "description": "A fhir client made with Svelte",
+  "name": "svendistoje",
+  "description": "A base setup for Svelte with WindiCSS, Storybook and Jest in Typescript",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c .config/rollup.config.js",
