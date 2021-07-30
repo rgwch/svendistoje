@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c .config/rollup.config.js",
+    "clean": "rimraf public/build",
     "dev": "rollup -c .config/rollup.config.js -w",
     "start": "sirv public -s --port 3000",
     "validate": "svelte-check",
@@ -52,6 +53,7 @@
     "windicss-webpack-plugin": "^1.4.1"
   },
   "dependencies": {
+    "rimraf": "^3.0.2",
     "sirv-cli": "^1.0.0"
   }
 }
