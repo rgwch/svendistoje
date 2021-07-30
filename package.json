@@ -44,7 +44,7 @@
     "svelte-i18n": "^3.3.9",
     "svelte-jester": "^1.7.0",
     "svelte-loader": "^3.1.2",
-    "svelte-preprocess": "^4.0.0",
+    "svelte-preprocess": "^4.7.4",
     "svelte-windicss-preprocess": "^2.1.9",
     "ts-jest": "^27.0.4",
     "tslib": "^2.0.0",
