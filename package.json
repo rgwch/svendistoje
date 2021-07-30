@@ -7,8 +7,8 @@
     "dev": "rollup -c .config/rollup.config.js -w",
     "start": "sirv public -s --port 3000",
     "validate": "svelte-check",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -c .config/storybook",
+    "build-storybook": "build-storybook -c .config/storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -40,9 +40,11 @@
     "svelte-preprocess": "^4.0.0",
     "svelte-windicss-preprocess": "^2.1.9",
     "tslib": "^2.0.0",
-    "typescript": "^4.0.0"
+    "typescript": "^4.0.0",
+    "windicss-webpack-plugin": "^1.4.1"
   },
   "dependencies": {
+    "node-sass": "^6.0.1",
     "sirv-cli": "^1.0.0"
   }
 }
