@@ -9,4 +9,5 @@
   <Test {...args} />
 </Template>
 
-<Story name="primary" args={{ title: "ha" }} />
+<Story name="Yellow" args={{ title: "Test in Storybook: Yellow",color:"text-yellow-600" }} />
+<Story name="Blue" args={{ title: "Test in Storybook: Blue",color:"text-blue-800" }} />
