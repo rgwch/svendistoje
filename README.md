@@ -1,4 +1,4 @@
-# Svelte, Windicss, Storybook, Jest & TypeScript
+# [Svelte](https://svelte.dev/), [Windicss](https://windicss.org/), [Storybook](https://storybook.js.org/), [Jest](https://jestjs.io/) & [TypeScript](https://www.typescriptlang.org/)
 
 Based on the template https://github.com/munxar/svendi with Svelte, WindiCSS & Typescript
 
