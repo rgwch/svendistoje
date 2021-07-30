@@ -1,5 +1,7 @@
 <script lang="ts">
+  /** This is the Title of the Component*/
   export let title: string;
+  /** Tailwind/Windi class for the title.*/
   export let color: string="text-blue-800"
 </script>
 

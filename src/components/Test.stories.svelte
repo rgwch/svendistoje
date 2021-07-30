@@ -10,4 +10,4 @@
 </Template>
 
 <Story name="Yellow" args={{ title: "Test in Storybook: Yellow",color:"text-yellow-600" }} />
-<Story name="Blue" args={{ title: "Test in Storybook: Blue",color:"text-blue-800" }} />
+<Story name="Red" args={{ title: "Test in Storybook: Red",color:"text-red-800" }} />
