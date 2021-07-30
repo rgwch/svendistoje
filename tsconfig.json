@@ -12,6 +12,9 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "types": [
+      "jest"
+    ]
   }
 }
