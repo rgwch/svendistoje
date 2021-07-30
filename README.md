@@ -13,6 +13,7 @@ npm i
 ```bash
 npm run dev
 ```
+(And navigate to <http://localhost:3000>)
 
 ## Build for Production
 ```bash

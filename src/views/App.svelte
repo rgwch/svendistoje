@@ -13,7 +13,8 @@
     nihil necessitatibus quibusdam repellat et illum fugiat earum fugit nobis.
     Vitae assumenda cumque nihil tempora expedita, at sunt ipsam inventore.
   </div>
-  <p class="bg-pink-100 text-blue-600 mb-8">this is blue on pink</p>
+  <p class="bg-pink-100 text-blue-600 mb-8">if this is blue on pink, WindiCSS worked in the main view.</p>
   <Test title="Component Test" />
 </div>
+<p class="italic mt-5 text-center">Try to modify something and see near-realtime change in the browser!</p>
 </template>
