@@ -4,7 +4,7 @@ Based on the template https://github.com/munxar/svendi with Svelte, WindiCSS & T
 
 ## Install
 ```bash
-npx degit rgwch/svendistoje my-app
+npx degit rgwch/svendistoje#main my-app
 cd my-app
 npm i
 ```
