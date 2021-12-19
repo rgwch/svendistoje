@@ -13,7 +13,7 @@ module.exports = {
     "preprocess": require("svelte-preprocess")()
   },
   "webpackFinal": (config, { configType }) => {
-    const WindiCSS =require('windicss-webpack-plugin').default
+    const WindiCSS = require('windicss-webpack-plugin')
     config.plugins.push(
       new WindiCSS()
     )

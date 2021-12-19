@@ -1,7 +1,7 @@
 {
   "name": "svendistoje",
   "description": "A base setup for Svelte with WindiCSS, Storybook and Jest in Typescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "rollup -c .config/rollup.config.js",
     "clean": "rimraf public/build",
@@ -50,10 +50,9 @@
     "ts-jest": "^27.0.4",
     "tslib": "^2.0.0",
     "typescript": "^4.0.0",
-    "windicss-webpack-plugin": "^1.4.1"
-  },
-  "dependencies": {
+    "windicss-webpack-plugin": "^1.6.0",
     "rimraf": "^3.0.2",
     "sirv-cli": "^1.0.0"
-  }
+  },
+  "dependencies": {}
 }
