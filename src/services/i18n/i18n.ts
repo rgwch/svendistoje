@@ -21,3 +21,9 @@ init({
     initialLocale: 'de'
 })
 
+export function setLocale(locale: string) {
+    init({
+        initialLocale: locale,
+        fallbackLocale: 'en'
+    })
+}

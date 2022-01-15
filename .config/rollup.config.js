@@ -8,6 +8,7 @@ import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
 import windicss from 'svelte-windicss-preprocess'
 import replace from '@rollup/plugin-replace'
+import json from '@rollup/plugin-json'
 import infos from '../package.json'
 
 
@@ -76,7 +77,7 @@ export default {
       sourceMap: !production,
       inlineSources: !production
     }),
-
+    json(),
     // In dev mode, call `npm run start` once
     // the bundle has been generated
     !production && serve(),

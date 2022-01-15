@@ -1,5 +1,8 @@
 <script lang="ts">
-  import Test from "../components/Test.svelte";
+  /** Demo of svelte-i18n */
+  import { _ } from 'svelte-i18n'
+
+import Test from "../components/Test.svelte";
 </script>
 
 <template>
@@ -13,7 +16,7 @@
   </div>
   <p class="bg-pink-100 text-blue-600 mb-8">if this is blue on pink, WindiCSS worked 
   in the main view. (views/App.svelte)</p>
-  <Test title="Component Test" />
+  <Test title={$_("demotest")} />
 </div>
 <p class="italic mt-5 text-center">Try to modify something and see near-realtime change in the browser!</p>
 </template>
