@@ -30,5 +30,8 @@
   "demotest": "Testkomponente",
   "formatting": {
     "date": "DD.MM.YYYY"
+  },
+  "general": {
+    "new": "Neu"
   }
 }
