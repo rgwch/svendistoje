@@ -1,14 +1,18 @@
 {
   "name": "svendistoje",
   "description": "A base setup for Svelte with i18n with WindiCSS, Storybook and Jest in Typescript",
-  "version": "1.2.0",
+  "version": "1.2.1",
+  "engines":{
+    "node":"^16",
+    "npm": "^8"
+  },
   "scripts": {
     "build": "rollup -c .config/rollup.config.js",
     "clean": "rimraf public/build",
     "dev": "rollup -c .config/rollup.config.js -w",
     "start": "sirv public -s --port 3000",
     "validate": "svelte-check",
-    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006 -c .config/storybook",
+    "storybook": "start-storybook -p 6006 -c .config/storybook",
     "build-storybook": "build-storybook -c .config/storybook",
     "test": "jest -c .config/jest.config.js",
     "test:watch": "npm test -- --watch",
