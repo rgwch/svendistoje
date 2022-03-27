@@ -56,7 +56,8 @@ export default {
     }),
     // we'll extract any component CSS out into
     // a separate file - better for performance
-    css({ output: production ? windicss.optimize('bundle.css') : 'bundle.css' }),
+    // css({ output: production ? windicss.optimize('bundle.css') : 'bundle.css' }),
+    css({ output: 'bundle.css' }),
     replace({
       'isproduction': production.toString(),
       'SVELFHIR_VERSION': infos.version,

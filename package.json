@@ -1,9 +1,9 @@
 {
   "name": "svendistoje",
   "description": "A base setup for Svelte with i18n with WindiCSS, Storybook and Jest in Typescript",
-  "version": "1.2.1",
-  "engines":{
-    "node":"^16",
+  "version": "1.2.2",
+  "engines": {
+    "node": "^16",
     "npm": "^8"
   },
   "scripts": {
