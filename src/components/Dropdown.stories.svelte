@@ -9,9 +9,10 @@
 	};
 </script>
 
-<Meta title="Dropdown" component={Dropdown} />
+<Meta title="Components/Dropdown" component={Dropdown} />
 
 <Template let:args>
+	<span>Text mit Menu</span>
 	<Dropdown {...args} />
 </Template>
 

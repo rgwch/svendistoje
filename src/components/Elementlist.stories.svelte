@@ -10,7 +10,7 @@
 	};
 </script>
 
-<Meta title="Elementlist" component={El} />
+<Meta title="Components/Elementlist" component={El} />
 
 <Template let:args>
 	<El {...args} />
