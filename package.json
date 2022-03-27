@@ -1,10 +1,24 @@
 {
   "name": "svendistoje",
   "description": "A base setup for Svelte with i18n with WindiCSS, Storybook and Jest in Typescript",
+  "license": "MIT",
   "version": "1.3.2",
   "engines": {
     "node": "^16",
     "npm": "^8"
+  },
+  "keywords": [
+    "Svelte",
+    "WindiCSS",
+    "Storybook"
+  ],
+  "homepage": "https://github.com/rgwch/svendistoje/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rgwch/svendistoje"
+  },
+  "bugs": {
+    "url": "https://github.com/rgwch/svendistoje/issues"
   },
   "scripts": {
     "build": "rollup -c .config/rollup.config.js",
