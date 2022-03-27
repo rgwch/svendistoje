@@ -10,10 +10,27 @@
 	};
 </script>
 
-<Meta title="Components/Elementlist" component={El} />
+<Meta
+	title="Components/Elementlist"
+	component={El}
+	argTypes={{
+		onSelected: { action: 'selected' },
+	}}
+	parameters={{
+		actions: {
+			handles: ['selected'],
+		},
+	}}
+/>
 
 <Template let:args>
-	<El {...args} />
+	<div class="py-2 my-4">
+		A list of items which can be edited, reordered and deleted. New Items
+		can be appended.
+	</div>
+	<div class="max-w-1/3">
+		<El {...args} on:selected={args.onSelected} />
+	</div>
 </Template>
 
 <Story name="Default" args={{ metadata: meta }} />

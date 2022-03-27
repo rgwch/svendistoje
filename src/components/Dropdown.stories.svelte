@@ -9,11 +9,22 @@
 	};
 </script>
 
-<Meta title="Components/Dropdown" component={Dropdown} />
+<Meta
+	title="Components/Dropdown"
+	component={Dropdown}
+	argTypes={{
+		onSelected: { action: 'selected' },
+	}}
+	parameters={{
+		actions: {
+			handles: ['selected'],
+		},
+	}}
+/>
 
 <Template let:args>
 	<p>A simple dropdown with the option to add elements.</p>
-	<Dropdown {...args} />
+	<Dropdown {...args} on:selected={args.onSelected} />
 </Template>
 
 <Story name="Default" args={{ metadata: meta }} />

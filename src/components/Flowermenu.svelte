@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   /**
-   * Definitiob for a menu entry
+   * Definition for a menu entry
    */
   export type MENUDEF = {
     label?: string;
@@ -84,7 +84,7 @@
         y: yoff,
         w: 3,
         label: ' * ',
-        name: '*',
+        name: '',
       });
     }
   });
@@ -94,42 +94,49 @@
   });
   function handleKeydown(event) {
     let sel: MENUDEF;
+    if (event.key === 'Escape') {
+      toggle();
+    }
     for (const it of items) {
-      if (it.shortcut === event.key) {
+      if (it.shortcut === event.charCode) {
         sel = it;
         break;
       }
     }
     if (!sel) {
       switch (event.key) {
-        case '1':
+        case '8':
           sel = items[0];
           break;
-        case '2':
+        case '9':
           sel = items[1];
           break;
-        case '3':
+        case '6':
           sel = items[2];
           break;
-        case '4':
+        case '3':
           sel = items[3];
           break;
-        case '5':
+        case '2':
           sel = items[4];
           break;
-        case '6':
+        case '1':
           sel = items[5];
           break;
-        case '7':
+        case '4':
           sel = items[6];
           break;
-        case '8':
+        case '7':
           sel = items[7];
           break;
+        default:
+          console.log('undefined key ' + event.key);
       }
     }
-    toggle();
-    setTimeout(() => dispatch('select', sel.name), 100);
+    if (sel) {
+      toggle();
+      setTimeout(() => dispatch('select', sel.name), 100);
+    }
   }
   function toggle() {
     if (isOpen) {
@@ -166,10 +173,10 @@
   .item {
     position: absolute;
     color: blue;
-    background-color: lightblue;
+    background-color: yellow;
     text-align: center;
     border: 1px darkblue solid;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 1px;
   }
   .opener {

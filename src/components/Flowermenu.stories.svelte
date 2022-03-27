@@ -13,8 +13,11 @@
         'six',
         'seven',
         'eight',
-    ].map((el) => {
-        return { name: el };
+    ].map((el, idx) => {
+        return {
+            name: el,
+            shortcut: 'a'.charCodeAt(0) + idx,
+        };
     });
     const longitems = [
         'Menuentry number one',
@@ -64,6 +67,15 @@
             is more intuitive to handle, since we remember "half right" better
             than "fifth item". It is also more mobile-friendly, since items are
             larger and easier to tap on.
+        </p>
+        <p>
+            Key shortcuts are easy to remember on a numeric key pad: The keys
+            around the 5 go for their respective leafs on te flower. e.g. 8
+            choses the topmost entry.
+        </p>
+        <p>
+            It is also possible to define Shortcuts via the Menuentry
+            definition.
         </p>
         <div class="mt-8">
             <span
