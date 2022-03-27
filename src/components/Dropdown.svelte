@@ -18,7 +18,14 @@
 	import { onMount } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
+	/**
+	 * Definition of the items and the prompts to add new elements
+	 */
 	export let metadata: datadef;
+	/**
+	 * filter funtion to limit displayed elements
+	 * @param elem
+	 */
 	export let filter: (elem) => boolean = (elem) => true;
 
 	let value;

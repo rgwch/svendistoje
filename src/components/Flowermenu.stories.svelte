@@ -22,6 +22,7 @@
 <Template let:args>
     <div class="m4 p4">
         <h1>Flowermenu demo</h1>
+        <p>A Flowermenu is a menu which is not arranged as a flat or hierarchical organized list of items, but as leafs of a flower. This is more intuitive to handle, since we remember "half right" better than "fifth item". It is also more mobile.friendly, since items are larger and easier to tap on.</p>
         <div class="mt-8">
             <span>Some text with a</span>
             <Flower {...args} />

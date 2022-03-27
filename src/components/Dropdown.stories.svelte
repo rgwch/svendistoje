@@ -12,7 +12,7 @@
 <Meta title="Components/Dropdown" component={Dropdown} />
 
 <Template let:args>
-	<span>Text mit Menu</span>
+	<p>A simple dropdown with the option to add elements.</p>
 	<Dropdown {...args} />
 </Template>
 
