@@ -60,8 +60,8 @@ export default {
     css({ output: 'bundle.css' }),
     replace({
       'isproduction': production.toString(),
-      'SVELFHIR_VERSION': infos.version,
-      'SVELFHIR_BUILDDATE': new Date().toString(),
+      '_BUILD_VERSION_': infos.version,
+      '_BUILD_DATE_': new Date().toString(),
       'preventAssignment': true
     }),
     // If you have external dependencies installed from
