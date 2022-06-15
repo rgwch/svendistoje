@@ -14,7 +14,7 @@
 
 <script lang="ts">
   import { createEventDispatcher, onMount, onDestroy } from 'svelte';
-
+  import { fade, slide } from 'svelte/transition';
   /**
    * The Menu Items to display. Up to eight MENUDEFs
    */
@@ -33,6 +33,21 @@
   let xoff = 0;
   let yoff = 0;
 
+  function clickOutside(node) {
+    const handleClick = (event) => {
+      if (!node.contains(event.target)) {
+        // node.dispatchEvent(new CustomEvent('menuclose'));
+        isOpen = false;
+      }
+    };
+    document.addEventListener('click', handleClick, true);
+
+    return {
+      destroy() {
+        document.removeEventListener('click', handleClick, true);
+      },
+    };
+  }
   function pos(idx: number): Array<number> {
     // const off = (title.length + 1) * wChar;
     switch (idx) {
@@ -78,6 +93,7 @@
         label: item.label || item.name,
       };
     });
+    /*
     if (items.length < 9) {
       _items.push({
         x: xoff + (title.length - 3) / 2,
@@ -87,6 +103,7 @@
         name: '',
       });
     }
+    */
   });
   onDestroy(() => {
     window.removeEventListener('keypress', handleKeydown);
@@ -153,18 +170,20 @@
   <span style="position:relative" bind:this={dom}>
     <span class="opener" on:click={() => toggle()}>{title}</span>
     {#if isOpen}
-      {#each _items as item, idx}
-        <div
-          class="item"
-          style="left:{item.x}ch;top:{item.y}em;width:{item.w}ch;"
-          on:click={() => {
-            toggle();
-            setTimeout(() => dispatch('select', item.name), 100);
-          }}
-        >
-          {item.label}
-        </div>
-      {/each}
+      <div use:clickOutside transition:fade>
+        {#each _items as item, idx}
+          <div
+            class="item"
+            style="left:{item.x}ch;top:{item.y}em;width:{item.w}ch;"
+            on:click={() => {
+              toggle();
+              setTimeout(() => dispatch('select', item.name), 100);
+            }}
+          >
+            {item.label}
+          </div>
+        {/each}
+      </div>
     {/if}
   </span>
 </template>
@@ -173,11 +192,12 @@
   .item {
     position: absolute;
     color: blue;
-    background-color: yellow;
+    background-color: rgb(229, 229, 22);
     text-align: center;
     border: 1px darkblue solid;
     border-radius: 8px;
     padding: 1px;
+    box-shadow: 5px 5px 2px gray;
   }
   .opener {
     position: absolute;
