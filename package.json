@@ -2,7 +2,7 @@
   "name": "svendistoje",
   "description": "A base setup for Svelte with i18n with WindiCSS, Storybook and Jest in Typescript",
   "license": "MIT",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "engines": {
     "node": "^16",
     "npm": "^8"
@@ -49,6 +49,7 @@
     "@storybook/svelte": "^6.4.13",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/svelte": "^3.0.3",
+    "@testing-library/user-event": "^14.2.0",
     "@tsconfig/svelte": "^3.0.0",
     "@types/array-move": "^2.0.0",
     "@types/jest": "^27.4.0",
