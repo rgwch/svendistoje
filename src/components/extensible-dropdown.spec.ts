@@ -1,4 +1,4 @@
-import Drop from './Dropdown.svelte'
+import Drop from './ExtensibleDropdown.svelte'
 import { render } from '@testing-library/svelte'
 import '../services/i18n/i18n'
 import { listen } from 'jest-svelte-events'
