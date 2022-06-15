@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
     import '../services/i18n/i18n';
-    import App from '../views/App.svelte';
+    import MarginDecorator from './MarginDecorator.svelte';
     import Flower from './Flowermenu.svelte';
     // import type { MENUDEF } from './Flowermenu.svelte';
     const shortitems = [
@@ -46,49 +46,49 @@
 </script>
 
 <Meta
-    title="Components/Flowermenu"
+    title="Widgets/Flowermenu"
     component={Flower}
     argTypes={{
         onSelect: { action: 'select' },
     }}
-    parameters={{
-        actions: {
-            handles: ['select'],
-        },
-    }}
 />
 
+<div class="bg-gray-100 m-8 p-4 rounded-md border border-blue-500">
+    <h1 class="font-bold text-lg">Flowermenu</h1>
+    <p class="mb-5">
+        A Flowermenu is a menu which is not arranged as a flat or hierarchical
+        organized list of items, but as leafs of a flower. This is more
+        intuitive to handle, since we remember "half right" better than "fifth
+        item". It is also more mobile-friendly, since items are larger and
+        easier to tap on.
+    </p>
+    <p>
+        Key shortcuts are easy to remember on a numeric key pad: The keys around
+        the 5 go for their respective leafs on te flower. e.g. 8 choses the
+        topmost entry.
+    </p>
+    <p>It is also possible to define Shortcuts via the Menuentry definition.</p>
+</div>
+
 <Template let:args>
-    <div class="m4 p4">
-        <h1>Flowermenu demo</h1>
-        <p>
-            A Flowermenu is a menu which is not arranged as a flat or
-            hierarchical organized list of items, but as leafs of a flower. This
-            is more intuitive to handle, since we remember "half right" better
-            than "fifth item". It is also more mobile-friendly, since items are
-            larger and easier to tap on.
-        </p>
-        <p>
-            Key shortcuts are easy to remember on a numeric key pad: The keys
-            around the 5 go for their respective leafs on te flower. e.g. 8
-            choses the topmost entry.
-        </p>
-        <p>
-            It is also possible to define Shortcuts via the Menuentry
-            definition.
-        </p>
-        <div class="mt-8">
-            <span
-                >Some text in the middle of the page toprovide space for a</span
-            >
-            <Flower {...args} on:select={args.onSelect} />
-            <span class="px-14 mx-10"> which is a menu.</span>
+    <MarginDecorator>
+        <div class="m4 p4">
+            <h1>Flowermenu demo</h1>
+            <div class="mt-8">
+                <span
+                    >Some text in the middle of the page toprovide space for a</span
+                >
+                <Flower {...args} on:select={args.onSelect} />
+                <span class="px-14 mx-10"> which is a menu.</span>
+            </div>
+            <div class="mt-8">
+                <p>
+                    A Menu near the left edge to demonstrate shift right feature
+                </p>
+                <Flower {...args} on:select={args.onSelect} />
+            </div>
         </div>
-        <div class="mt-8">
-            <p>A Menu near the left edge to demonstrate shift right feature</p>
-            <Flower {...args} on:select={args.onSelect} />
-        </div>
-    </div>
+    </MarginDecorator>
 </Template>
 
 <Story name="Short entries" args={{ title: 'Flowermenu', items: shortitems }} />

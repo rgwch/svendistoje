@@ -1,6 +1,9 @@
 # [Svelte](https://svelte.dev/), [WindiCSS](https://windicss.org/), [Storybook](https://storybook.js.org/), [Jest](https://jestjs.io/) & [TypeScript](https://www.typescriptlang.org/)
 
-Based on the template https://github.com/munxar/svendi with Svelte, Svelte-i18n, WindiCSS & Typescript
+Based on the template https://github.com/munxar/svendi.
+
+Contains a fully functional starter with Svelte, Svelte-i18n, WindiCSS & Typescript, and some more or less useful widgets. Use `npm run storybook` to display them.
+
 
 ## Prerequisites:
 

@@ -7,8 +7,8 @@
 </script>
 
 <script lang="ts">
-	import '../../node_modules/@fortawesome/fontawesome-free/js/solid';
-	import '../../node_modules/@fortawesome/fontawesome-free/js/fontawesome';
+	import '@fortawesome/fontawesome-free/js/solid';
+	import '@fortawesome/fontawesome-free';
 	import { _ } from 'svelte-i18n';
 	import move from 'array-move';
 	import { createEventDispatcher } from 'svelte';
