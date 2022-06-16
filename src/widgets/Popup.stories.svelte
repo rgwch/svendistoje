@@ -4,7 +4,7 @@
   import Popup from './Popup.svelte';
 
   import MarginDecorator from './MarginDecorator.svelte';
-  const items = ['one', ['two', 'four', 'five'], 'three'];
+  const items = ['one', ['sub-1', 'sub1-one', 'sub1-two', ["subsub-1", 'subsub-2'],'sub1-three'], 'three'];
 </script>
 
 <Meta

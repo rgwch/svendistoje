@@ -4,7 +4,7 @@
   const dispatch = createEventDispatcher();
   export let title = '';
   export let items: Array<string> = [];
-  export let sub = false;
+  export let level = 0;
   if (!title) {
     title = items.splice(0, 1)[0];
   }
@@ -13,10 +13,10 @@
 </script>
 
 <template>
-  <div class="sm:hidden">Test</div>
   <div class="relative">
     <div
-      class="relative"
+      class="relative cursor-pointer hover:text-blue-600"
+
       on:click={() => {
         open = !open;
       }}
@@ -27,10 +27,10 @@
       <ul class="absolute">
         {#each items as item}
           {#if Array.isArray(item)}
-            <svelte:self items={[...item]} on:selected sub={true} />
+            <svelte:self items={[...item]} on:selected level={level+1} />
           {:else}
             <li
-              class="my-0 py-0 ml-2 hover:text-blue-600 cursor-pointer"
+              class="my-0 py-0 pl-[2*level] hover:text-blue-600 cursor-pointer"
               transition:slide
               on:click={() => {
                 dispatch('selected', item);
