@@ -13,8 +13,8 @@
 </script>
 
 <script lang="ts">
-  import { createEventDispatcher, onMount, onDestroy } from 'svelte';
-  import { fade, slide } from 'svelte/transition';
+  import { createEventDispatcher, onMount, onDestroy } from "svelte";
+  import { fade, slide } from "svelte/transition";
   /**
    * The Menu Items to display. Up to eight MENUDEFs
    */
@@ -23,7 +23,7 @@
   /**
    * The title of the Menu
    */
-  export let title = 'Test';
+  export let title = "Test";
   const hChar = 2.6;
   const wChar = 1.2;
   let itemWidth = items.reduce(
@@ -33,21 +33,10 @@
   let xoff = 0;
   let yoff = 0;
 
-  function clickOutside(node) {
-    const handleClick = (event) => {
-      if (!node.contains(event.target)) {
-        // node.dispatchEvent(new CustomEvent('menuclose'));
-        isOpen = false;
-      }
-    };
-    document.addEventListener('click', handleClick, true);
-
-    return {
-      destroy() {
-        document.removeEventListener('click', handleClick, true);
-      },
-    };
+  function handleClick(event) {
+    isOpen = false;
   }
+
   function pos(idx: number): Array<number> {
     // const off = (title.length + 1) * wChar;
     switch (idx) {
@@ -104,14 +93,17 @@
       });
     }
     */
+    document.addEventListener("click", handleClick, true);
   });
   onDestroy(() => {
-    window.removeEventListener('keypress', handleKeydown);
+    window.removeEventListener("keypress", handleKeydown);
+    document.removeEventListener("click", handleClick, true);
+
     isOpen = false;
   });
   function handleKeydown(event) {
     let sel: MENUDEF;
-    if (event.key === 'Escape') {
+    if (event.key === "Escape") {
       toggle();
     }
     for (const it of items) {
@@ -122,45 +114,45 @@
     }
     if (!sel) {
       switch (event.key) {
-        case '8':
+        case "8":
           sel = items[0];
           break;
-        case '9':
+        case "9":
           sel = items[1];
           break;
-        case '6':
+        case "6":
           sel = items[2];
           break;
-        case '3':
+        case "3":
           sel = items[3];
           break;
-        case '2':
+        case "2":
           sel = items[4];
           break;
-        case '1':
+        case "1":
           sel = items[5];
           break;
-        case '4':
+        case "4":
           sel = items[6];
           break;
-        case '7':
+        case "7":
           sel = items[7];
           break;
         default:
-          console.log('undefined key ' + event.key);
+          console.log("undefined key " + event.key);
       }
     }
     if (sel) {
       toggle();
-      setTimeout(() => dispatch('select', sel.name), 100);
+      setTimeout(() => dispatch("select", sel.name), 100);
     }
   }
   function toggle() {
     if (isOpen) {
-      window.removeEventListener('keypress', handleKeydown);
+      window.removeEventListener("keypress", handleKeydown);
       isOpen = false;
     } else {
-      window.addEventListener('keypress', handleKeydown);
+      window.addEventListener("keypress", handleKeydown);
       isOpen = true;
     }
   }
@@ -170,14 +162,14 @@
   <span style="position:relative" bind:this={dom}>
     <span class="opener" on:click={() => toggle()}>{title}</span>
     {#if isOpen}
-      <div use:clickOutside transition:fade>
+      <div transition:fade>
         {#each _items as item, idx}
           <div
             class="item"
             style="left:{item.x}ch;top:{item.y}em;width:{item.w}ch;"
             on:click={() => {
               toggle();
-              setTimeout(() => dispatch('select', item.name), 100);
+              setTimeout(() => dispatch("select", item.name), 100);
             }}
           >
             {item.label}
